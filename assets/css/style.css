@@ -895,6 +895,64 @@ section {
   background: #5697d0;
 }
 
+.cta .cta-btn-whatsapp {
+  font-family: "Calibri", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 35px;
+  border-radius: 4px;
+  transition: 0.5s;
+  margin-top: 20px;
+  background: #25D366;
+  color: #fff;
+}
+
+.cta .cta-btn-whatsapp:hover {
+  background: #5EE38A;
+}
+
+.cta .cta-btn-whatsapp {
+  font-family: "Calibri", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 35px;
+  border-radius: 4px;
+  transition: 0.5s;
+  margin-top: 20px;
+  background: #25D366;
+  color: #fff;
+}
+
+.cta .cta-btn-whatsapp:hover {
+  background: #5EE38A;
+}
+
+.cta .cta-btn-email {
+  font-family: "Calibri", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 35px;
+  border-radius: 4px;
+  transition: 0.5s;
+  margin-top: 20px;
+  background: #DC483C;
+  color: #fff;
+}
+
+.cta .cta-btn-email:hover {
+  background: #F05442;
+}
+
+.cta .bx {
+  margin-right: 3px;
+}
+
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
