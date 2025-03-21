@@ -120,6 +120,16 @@
     }
   }, true)
 
+    /**
+   * Mobile nav dropdowns collapse
+   */
+    const navLinks = document.querySelectorAll('.nav-link')
+    const menuToggle = document.getElementById('nav-menu')
+    const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle:true})
+    navLinks.forEach((l) => {
+        l.addEventListener('click', () => { bsCollapse.toggle() })
+    })
+
   /**
    * Scrool with ofset on links with a class name .scrollto
    */
