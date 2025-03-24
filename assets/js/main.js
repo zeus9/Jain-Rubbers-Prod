@@ -123,12 +123,21 @@
     /**
    * Mobile nav dropdowns collapse
    */
-    const navLinks = document.querySelectorAll('.nav-link')
-    const menuToggle = document.getElementById('nav-menu')
-    const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle:true})
-    navLinks.forEach((l) => {
-        l.addEventListener('click', () => { bsCollapse.toggle() })
-    })
+  select('.nav-link', true).forEach(link => {
+    link.addEventListener('click', () => {
+      const navbarCollapse = select('.navbar-collapse');
+      // console.log("navbarcollapse " + navbarCollapse.classList.contains('show'));
+      if (navbarCollapse.classList.contains('show')) {
+        new bootstrap.Collapse(navbarCollapse, {toggle: true});
+      }
+    });
+  });
+    // const navLinks = document.querySelectorAll('.nav-item')
+    // const menuToggle = document.getElementById('nav-menu')
+    // const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle:true})
+    // navLinks.forEach((l) => {
+    //     l.addEventListener('click', () => { bsCollapse.toggle() })
+    // })
 
   /**
    * Scrool with ofset on links with a class name .scrollto
