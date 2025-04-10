@@ -175,3 +175,6 @@ cython_debug/
 
 # Dewi_Public sample website not part of main code
 Dewi_public
+
+# Visual Studio Code config
+.vscode
