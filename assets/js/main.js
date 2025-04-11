@@ -121,17 +121,64 @@
   }, true)
 
     /**
-   * Mobile nav dropdowns collapse
+   * Mobile nav collapse on clicking any nav-link
    */
-  select('.nav-link', true).forEach(link => {
-    link.addEventListener('click', () => {
-      const navbarCollapse = select('.navbar-collapse');
-      // console.log("navbarcollapse " + navbarCollapse.classList.contains('show'));
-      if (navbarCollapse.classList.contains('show')) {
-        new bootstrap.Collapse(navbarCollapse, {toggle: true});
-      }
-    });
-  });
+
+  on('click', '.nav-link', function(e) {
+
+    const navbarCollapse = select('.navbar-collapse');
+        if (navbarCollapse.classList.contains('show')) {
+
+          let navbar = select('#navbar');
+          // Collapse navbar-mobile
+          if (navbar.classList.contains('navbar-mobile')) {
+          
+            // collapse nested ul list if active
+            const nextSibling = select('.navbar .dropdown > a').nextElementSibling;
+            if (nextSibling.classList.contains('dropdown-active')){
+              nextSibling.classList.toggle('dropdown-active');
+            }
+
+            // collapse navbar mobile
+            navbar.classList.remove('navbar-mobile')
+            let navbarToggle = select('.mobile-nav-toggle')
+            navbarToggle.classList.toggle('bi-list')
+            navbarToggle.classList.toggle('bi-x')
+
+          }
+          // collapse navbar
+          new bootstrap.Collapse(navbarCollapse, {toggle: true});
+        }
+  }, true);
+
+  // select('.nav-link', true).forEach(link => {
+  //   link.addEventListener('click', () => {
+  //     const navbarCollapse = select('.navbar-collapse');
+  //       if (navbarCollapse.classList.contains('show')) {
+
+  //         // collapse nested ul list
+  //         // const dropdownNextEl = select('.navbar .dropdown > a').nextElementSibling;
+  //         if (select('#navbar').classList.contains('navbar-mobile')) {
+            
+  //           const nextSibling = select('.navbar .dropdown > a').nextElementSibling;
+  //           if (nextSibling.classList.contains('dropdown-active')){
+  //             select('.navbar .dropdown > a').nextElementSibling.classList.toggle('dropdown-active');
+  //           }
+            
+  //         }
+  //         // collapse navbar
+  //         new bootstrap.Collapse(navbarCollapse, {toggle: true});
+  //         // navbarCollapse.classList.remove('show');
+  //         // const navbarToggle = select('.mobile-nav-toggle');
+  //         // navbarToggle.classList.toggle('bi-list');
+  //         // navbarToggle.classList.toggle('bi-x');
+  //         // navbarToggle.classList.remove('bi-x'); 
+  //         // navbarToggle.classList.add('bi-list'); 
+        
+  //       }
+  //       })
+  //     });
+  // ------------------------------------------------------------------------
     // const navLinks = document.querySelectorAll('.nav-item')
     // const menuToggle = document.getElementById('nav-menu')
     // const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle:true})
@@ -145,14 +192,6 @@
   on('click', '.scrollto', function(e) {
     if (select(this.hash)) {
       e.preventDefault()
-
-      let navbar = select('#navbar')
-      if (navbar.classList.contains('navbar-mobile')) {
-        navbar.classList.remove('navbar-mobile')
-        let navbarToggle = select('.mobile-nav-toggle')
-        navbarToggle.classList.toggle('bi-list')
-        navbarToggle.classList.toggle('bi-x')
-      }
       scrollto(this.hash)
     }
   }, true)
