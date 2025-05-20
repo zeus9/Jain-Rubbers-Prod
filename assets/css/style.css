@@ -398,7 +398,7 @@ h6 {
 
 #hero .carousel-item::before {
   content: "";
-  background-color: rgba(12, 13, 14, 0.8);
+  background-color: rgba(12, 13, 14, 0.5);
 }
 
 #hero .carousel-container {
@@ -1012,7 +1012,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: flex-start;
+  align-items: center;
   padding: 20px;
 }
 
